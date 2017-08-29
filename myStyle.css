@@ -13,18 +13,3 @@ img{
 	margin: 3% 3% 3% 3%;
 }
 
-strong{
-	font-size: 90%;
-	color: purple;
-	font-family: "Times New Roman", Times, serif;
-}
-
-li{
-	font-size: 120%;
-	color: black;
-	font-family: "Times New Roman", Times, serif;
-}
-
-ul{
-	border: 1px solid purple;
-}
