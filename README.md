@@ -1,1 +1,1 @@
-https://casmali.github.io/corgisData/
+# inputs
