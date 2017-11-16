@@ -4,8 +4,8 @@ import json
 
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 
-with open("county_demographics.json") as demographics_data:
-        counties = json.load(demographics_data)
+with open("state_fragility.json") as fragility_data:
+        counties = json.load(fragility_data)
 
 @app.route("/")
 def render_main():
