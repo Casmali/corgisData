@@ -9,10 +9,10 @@ with open("state_fragility.json") as fragility_data:
 
 @app.route("/")
 def render_main():
-    return render_template('index.html',part = getStateOptions(states))
+    return render_template('index.html')
 @app.route("/fir")
 def render_page1():
-    return render_template('first.html',)
+    return render_template('first.html')
 @app.route("/sec")
 def render_page2():
     return render_template('second.html')
@@ -53,3 +53,5 @@ def render_responsethree():
         #the way we get info from args is that it is visible in a url. - the information in args is visible in the url for hte page being requested(ex. .../response?color=blue)
         res = str(ins*63360)
         return render_template('responsethree.html', their = request.args['miles'], response = res)
+if __name__=="__main__":
+    app.run(debug=False, port=54321)
