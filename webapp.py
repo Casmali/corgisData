@@ -32,9 +32,9 @@ def getYearOptions(states):
     ret = ""
     lis = {"doestmantter":True}
     for i in states:
-        if not(i["Year"] in lis):
-            ret += Markup("<option value=\"" + i['Year'] + "\">" + i['Year'] + "</option>")
-            lis[i['Year']] = True
+        if not(str(i["Year"]) in lis):
+            ret += Markup("<option value=\"" + str(i['Year']) + "\">" + str(i['Year']) + "</option>")
+            lis[str(i['Year'])] = True
     return ret
 
 @app.route("/response")
