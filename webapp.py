@@ -12,7 +12,7 @@ def render_main():
     return render_template('index.html')
 @app.route("/fir")
 def render_page1():
-    return render_template('first.html')
+    return render_template('first.html',nval = getStateOptions(states),yval = getYearOptions(states))
 @app.route("/sec")
 def render_page2():
     return render_template('second.html')
@@ -23,10 +23,18 @@ def render_page3():
 def getStateOptions(states):
     ret = ""
     lis = {"doestmantter":True}
-    for i in counties:
-        if not(i["State"] in lis):
+    for i in states:
+        if not(i["Country"] in lis):
             ret += Markup("<option value=\"" + i['State'] + "\">" + i['State'] + "</option>")
-            lis[i['State']] = True
+            lis[i["Country"]] = True
+    return ret
+def getyearOptions(states):
+    ret = ""
+    lis = {"doestmantter":True}
+    for i in states:
+        if not(i["Year"] in lis):
+            ret += Markup("<option value=\"" + i['Year'] + "\">" + i['year'] + "</option>")
+            lis[i['Year']] = True
     return ret
 
 @app.route("/response")
