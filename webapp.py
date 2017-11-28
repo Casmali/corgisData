@@ -25,7 +25,7 @@ def getStateOptions(states):
     lis = {"doestmantter":True}
     for i in states:
         if not(i["Country"] in lis):
-            ret += Markup("<option value=\"" + i['State'] + "\">" + i['State'] + "</option>")
+            ret += Markup("<option value=\"" + i['Country'] + "\">" + i['Country'] + "</option>")
             lis[i["Country"]] = True
     return ret
 def getyearOptions(states):
