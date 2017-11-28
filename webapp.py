@@ -28,7 +28,7 @@ def getStateOptions(states):
             ret += Markup("<option value=\"" + i['Country'] + "\">" + i['Country'] + "</option>")
             lis[i["Country"]] = True
     return ret
-def getyearOptions(states):
+def getYearOptions(states):
     ret = ""
     lis = {"doestmantter":True}
     for i in states:
