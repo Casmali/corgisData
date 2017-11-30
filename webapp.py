@@ -43,22 +43,11 @@ def render_response():
         ye = str(request.args['year'])
         count = states[0]
         for i in states:
-                if i['Country'] == na and i['Year'] == ye:
+                if i['Country'] == na and i['Year'] == int(ye):
                         count = i
         ind = states.index(i)
         
-        return render_template('response.html',nval = getStateOptions(states),yval = getYearOptions(states),name = na, year = ye, 
-                              ls = str(states[i]['Metrics']['Legitimacy']['Legitimacy Score']), 
-                              pl = str(states[i]['Metrics']['Legitimacy']['Political Legitimacy']),
-                              sel = str(states[i]['Metrics']['Legitimacy']['Security Legitimacy']),
-                              el = str(states[i]['Metrics']['Legitimacy']['Economic Legitimacy']),
-                              sl = str(states[i]['Metrics']['Legitimacy']['Social Legitimacy']),
-                              es = str(states[i]['Metrics']['Effectiveness']['Effectiveness Score']),
-                              pe = str(states[i]['Metrics']['Effectiveness']['Political Effectiveness']),
-                              see = str(states[i]['Metrics']['Effectiveness']['Security Effectiveness']),
-                              ee = str(states[i]['Metrics']['Effectiveness']['Economic Effectiveness']),
-                              se = str(states[i]['Metrics']['Effectiveness']['Social Effectiveness']),
-                              sfe = str(states[i]['Metrics']['State Fragility Index"]))
+        return render_template('response.html',nval = getStateOptions(states),yval = getYearOptions(states),name = na, year = ye, ls = str(states[i]['Metrics']['Legitimacy']['Legitimacy Score']), pl = str(states[i]['Metrics']['Legitimacy']['Political Legitimacy']), sel = str(states[i]['Metrics']['Legitimacy']['Security Legitimacy']), el = str(states[i]['Metrics']['Legitimacy']['Economic Legitimacy']), sl = str(states[i]['Metrics']['Legitimacy']['Social Legitimacy']), es = str(states[i]['Metrics']['Effectiveness']['Effectiveness Score']), pe = str(states[i]['Metrics']['Effectiveness']['Political Effectiveness']), see = str(states[i]['Metrics']['Effectiveness']['Security Effectiveness']), ee = str(states[i]['Metrics']['Effectiveness']['Economic Effectiveness']), se = str(states[i]['Metrics']['Effectiveness']['Social Effectiveness']), sfe = str(states[i]['Metrics']['State Fragility Index"]))
                                                              
 @app.route("/responsetwo")
 def render_responsetwo():
