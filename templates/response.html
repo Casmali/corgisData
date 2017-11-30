@@ -1,15 +1,59 @@
 {% extends "layout.html" %}
 {% set active_page ="fir" %}
-{% block title %}Inches to Centimeters!{% endblock %}
+{% block title %}Year Country Stats{% endblock %}
 {% block content %}
 
-<form action='/response'>
-      <br>Convert to cm!</br>
-      <input type="text" name="inches">
-      <br><br>
-      <input type="submit">
-    </form>
-
-<h1>{{ their }} inches in centimeters is: {{ response }}</h1>
+<form action="/response">
+  <select name="nameof">
+    {{ nval }}
+  </select>
+  <select name="year">
+    {{ yval }}
+  </select>
+  <br><br>
+  <input type="submit">
+      
+      <h2> {{ name }} {{ year }}</h2>    
+<table>
+  <tr>
+    <th>Legitimacy </th>
+  </tr>
+  <tr>
+    <td>Legitimacy Score:</td>
+    <td>Political Legitimacy:</td>
+    <td>Security Legitimacy:</td>
+    <td>Economic Legitimacy:</td>
+    <td>Social Legitimacy:</td>
+  </tr>
+  <tr>
+    <td>{{ ls }}</td>
+    <td>{{ pl }}</td>
+    <td>{{ sel }}</td>
+    <td>{{ el }}</td>
+    <td>{{ sl }}</td>
+  </tr>
+</table>
+      
+<table>
+  <tr>
+    <th> Effectiveness </th>
+  </tr>
+  <tr>
+    <td>Effectiveness Score:</td>
+    <td>Political Effectiveness:</td>
+    <td>Security Effectiveness:</td>
+    <td>Economic Effectiveness:</td>
+    <td>Social Effectiveness:</td>
+  </tr>
+  <tr>
+    <td>{{ es }}</td>
+    <td>{{ pe }}</td>
+    <td>{{ see }}</td>
+    <td>{{ ee }}</td>
+    <td>{{ se }}</td>
+  </tr>
+</table>
+      
+      <h3> {{ sfe }} </h3>
 
 {% endblock %}
