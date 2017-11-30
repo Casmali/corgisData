@@ -43,7 +43,7 @@ def render_response():
         ye = str(request.args['year'])
         count = states[0]
         for i in states:
-                if i['Country'] == na and i['Year'] = ye:
+                if i['Country'] == na and i['Year'] == ye:
                         count = i
         ind = states.index(i)
         
@@ -59,6 +59,7 @@ def render_response():
                               ee = str(states[i]['Metrics']['Effectiveness']['Economic Effectiveness']),
                               se = str(states[i]['Metrics']['Effectiveness']['Social Effectiveness']),
                               sfe = str(states[i]['Metrics']['State Fragility Index"]))
+                                                             
 @app.route("/responsetwo")
 def render_responsetwo():
         
