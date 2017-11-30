@@ -45,7 +45,7 @@ def render_response():
         for i in states:
                 if i['Country'] == na and i['Year'] == int(ye):
                         count = i
-        ind = states.index(i)
+        ind = states.index(count)
         
         return render_template('response.html',nval = getStateOptions(states),yval = getYearOptions(states),name = na, year = ye, ls = str(states[ind]['Metrics']['Legitimacy']['Legitimacy Score']), pl = str(states[ind]['Metrics']['Legitimacy']['Political Legitimacy']), sel = str(states[ind]['Metrics']['Legitimacy']['Security Legitimacy']), el = str(states[ind]['Metrics']['Legitimacy']['Economic Legitimacy']), sl = str(states[ind]['Metrics']['Legitimacy']['Social Legitimacy']), es = str(states[ind]['Metrics']['Effectiveness']['Effectiveness Score']), pe = str(states[ind]['Metrics']['Effectiveness']['Political Effectiveness']), see = str(states[ind]['Metrics']['Effectiveness']['Security Effectiveness']), ee = str(states[ind]['Metrics']['Effectiveness']['Economic Effectiveness']), se = str(states[ind]['Metrics']['Effectiveness']['Social Effectiveness']), sfe = str(states[ind]['Metrics']['State Fragility Index']))
 @app.route("/responsetwo")
