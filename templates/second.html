@@ -1,13 +1,25 @@
 {% extends "layout.html" %}
 {% set active_page ="sec" %}
-{% block title %}Inches to Feet!{% endblock %}
+{% block title %}Compare Stats{% endblock %}
 {% block content %}
 
-<form action='/responsetwo'>
-      <br>Convert to feet!</br>
-      <input type="text" name="inches">
-      <br><br>
-      <input type="submit">
-    </form>
+<form action="/response">
+  <select name="nameof">
+    {{ nval }}
+  </select>
+  <select name="year">
+    {{ yval }}
+  </select>
+  <br><br>
+      <select name="nameoft">
+    {{ nval }}
+  </select>
+  <select name="yeart">
+    {{ yval }}
+  </select>
+  <br><br>
+  <input type="submit">
+      
+  
 
 {% endblock %}
