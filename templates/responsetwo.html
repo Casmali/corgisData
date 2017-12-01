@@ -21,6 +21,65 @@
   <br><br>
   <input type="submit">
 
-<h1>{{ their }} inches in feet is: {{ response }}</h1>
+      <h2> {{ name }} {{ year }}</h2>    
+<table>
+  <tr>
+    <th>Legitimacy </th>
+  </tr>
+  <tr>
+    <td> Country </td>
+    <td>Legitimacy Score:</td>
+    <td>Political Legitimacy:</td>
+    <td>Security Legitimacy:</td>
+    <td>Economic Legitimacy:</td>
+    <td>Social Legitimacy:</td>
+  </tr>
+  <tr>
+  <td> {{name}} </td>
+    <td>{{ ls }}</td>
+    <td>{{ pl }}</td>
+    <td>{{ sel }}</td>
+    <td>{{ el }}</td>
+    <td>{{ sl }}</td>
+  </tr>
+    <td> {{ namet }} </td>
+    <td>{{ lst }}</td>
+    <td>{{ plt }}</td>
+    <td>{{ selt }}</td>
+    <td>{{ elt }}</td>
+    <td>{{ slt }}</td>
+  </tr>
+</table>
+      
+<table>
+  <tr>
+    <th> Effectiveness </th>
+  </tr>
+  <tr>
+    <td> Country: </td>
+    <td>Effectiveness Score:</td>
+    <td>Political Effectiveness:</td>
+    <td>Security Effectiveness:</td>
+    <td>Economic Effectiveness:</td>
+    <td>Social Effectiveness:</td>
+  </tr>
+  <tr>
+  <td> {{name}} </td>
+    <td>{{ es }}</td>
+    <td>{{ pe }}</td>
+    <td>{{ see }}</td>
+    <td>{{ ee }}</td>
+    <td>{{ se }}</td>
+  </tr>
+  <td> {{ namet }} </td>
+    <td>{{ est }}</td>
+    <td>{{ pet }}</td>
+    <td>{{ seet }}</td>
+    <td>{{ eet }}</td>
+    <td>{{ set }}</td>
+  </tr>
+</table>
+      
+      <h3> {{name}}:{{ sfe }} | {{ namet }}: {{ sfet }}</h3>
 
 {% endblock %}
