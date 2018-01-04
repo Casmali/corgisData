@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
 {% set active_page ="thi" %}
-{% block title %}Miles to inches!{% endblock %}
+{% block title %}State Over Time{% endblock %}
 {% block content %}
 
 
-<form action='/responsethree'>
-      <br>Convert miles to inches!</br>
-      <input type="text" name="miles">
-      <br><br>
-      <input type="submit">
-    </form>
+<form action="/response">
+  <select name="nameof">
+    {{ nval }}
+  </select>
+  <br><br>
+<input type="submit">
 
 <h1> {{ their }} miles in inches is: {{ response }}</h1>
 
