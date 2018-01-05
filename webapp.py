@@ -72,8 +72,8 @@ def render_responsethree():
         na = request.args['nameof']
         count = states[0]
         for i in states:
-                if i['Country'] == na
-                count = i
+                if i['Country'] == na:
+                 count = i
         ind = states.index(count)
         for i in states[ind]:
                 ret += markup(",[\'" + str(i['year']) + "\'," + str(i['Metrics']['Legitimacy']['Legitimacy Score]') + "," + str(i['Metrics']['Effectiveness']['Effectiveness Score']) + "," + str(i['Metrics'][State Fragility Index]) + "]")
