@@ -68,14 +68,16 @@ def render_responsetwo():
         return render_template('responsetwo.html',nval = getStateOptions(states),yval = getYearOptions(states),name = na, year = ye, namet = nat, yeart = yet, ls = str(states[ind]['Metrics']['Legitimacy']['Legitimacy Score']), pl = str(states[ind]['Metrics']['Legitimacy']['Political Legitimacy']), sel = str(states[ind]['Metrics']['Legitimacy']['Security Legitimacy']), el = str(states[ind]['Metrics']['Legitimacy']['Economic Legitimacy']), sl = str(states[ind]['Metrics']['Legitimacy']['Social Legitimacy']), es = str(states[ind]['Metrics']['Effectiveness']['Effectiveness Score']), pe = str(states[ind]['Metrics']['Effectiveness']['Political Effectiveness']), see = str(states[ind]['Metrics']['Effectiveness']['Security Effectiveness']), ee = str(states[ind]['Metrics']['Effectiveness']['Economic Effectiveness']), se = str(states[ind]['Metrics']['Effectiveness']['Social Effectiveness']), sfe = str(states[ind]['Metrics']['State Fragility Index']), lst = str(states[indt]['Metrics']['Legitimacy']['Legitimacy Score']), plt = str(states[indt]['Metrics']['Legitimacy']['Political Legitimacy']), selt = str(states[indt]['Metrics']['Legitimacy']['Security Legitimacy']), elt = str(states[indt]['Metrics']['Legitimacy']['Economic Legitimacy']), slt = str(states[indt]['Metrics']['Legitimacy']['Social Legitimacy']), est = str(states[indt]['Metrics']['Effectiveness']['Effectiveness Score']), pet = str(states[indt]['Metrics']['Effectiveness']['Political Effectiveness']), seet = str(states[indt]['Metrics']['Effectiveness']['Security Effectiveness']), eet = str(states[indt]['Metrics']['Effectiveness']['Economic Effectiveness']), sett = str(states[indt]['Metrics']['Effectiveness']['Social Effectiveness']), sfet = str(states[indt]['Metrics']['State Fragility Index']))
 @app.route("/responsethree")
 def render_responsethree():
+        ret = ""
         na = request.args['nameof']
-        ye = str(request.args['year'])
         count = states[0]
         for i in states:
-                if i['Country'] == na and i['Year'] == int(ye):
-                        count = i
+                if i['Country'] == na
+                count = i
         ind = states.index(count)
-        
-        return render_template('responsethree.html',nval = getStateOptions(states),yval = getYearOptions(states),name = na, year = ye, ls = str(states[ind]['Metrics']['Legitimacy']['Legitimacy Score']), pl = str(states[ind]['Metrics']['Legitimacy']['Political Legitimacy']), sel = str(states[ind]['Metrics']['Legitimacy']['Security Legitimacy']), el = str(states[ind]['Metrics']['Legitimacy']['Economic Legitimacy']), sl = str(states[ind]['Metrics']['Legitimacy']['Social Legitimacy']), es = str(states[ind]['Metrics']['Effectiveness']['Effectiveness Score']), pe = str(states[ind]['Metrics']['Effectiveness']['Political Effectiveness']), see = str(states[ind]['Metrics']['Effectiveness']['Security Effectiveness']), ee = str(states[ind]['Metrics']['Effectiveness']['Economic Effectiveness']), se = str(states[ind]['Metrics']['Effectiveness']['Social Effectiveness']), sfe = str(states[ind]['Metrics']['State Fragility Index']))
+        for i in states[ind]:
+                ret += markup(",[\'" + str(i['year']) + "\'," + str(i['Metrics']['Legitimacy']['Legitimacy Score]') + "," + str(i['Metrics']['Effectiveness']['Effectiveness Score']) + "," + str(i['Metrics'][State Fragility Index]) + "]")
+            
+        return render_template('responsethree.html',nval = getStateOptions(states),)
 if __name__=="__main__":
     app.run(debug=False, port=54321)
