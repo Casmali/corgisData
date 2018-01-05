@@ -78,6 +78,6 @@ def render_responsethree():
         for i in states[ind]:
                 ret += markup(",[\'" + str(i['year']) + "\'," + str(i['Metrics']['Legitimacy']['Legitimacy Score]') + "," + str(i['Metrics']['Effectiveness']['Effectiveness Score']) + "," + str(i['Metrics'][State Fragility Index]) + "]")
             
-        return render_template('responsethree.html',nval = getStateOptions(states),)
+        return render_template('responsethree.html',nval = getStateOptions(states),graphVal = ret)
 if __name__=="__main__":
     app.run(debug=False, port=54321)
