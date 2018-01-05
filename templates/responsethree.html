@@ -1,6 +1,29 @@
 {% extends "layout.html" %}
 {% set active_page ="thi" %}
 {% block title %}State Over Time{% endblock %}
+{%block headcont%}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Legitimacy Score', 'Effectiveness Score', 'State Fragility Index']
+          {{ graphVal }}
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+{% endblock %}
 {% block content %}
 
 
@@ -11,6 +34,7 @@
   <br><br>
 <input type="submit">
 
-<h1> {{ their }} miles in inches is: {{ response }}</h1>
+   <div id="chart_div" style="width: 100%; height: 500px;"></div>
+  
 
 {% endblock %}
