@@ -70,14 +70,11 @@ def render_responsetwo():
 def render_responsethree():
         ret = ""
         na = request.args['nameof']
-        count = states[0]
-        for i in states:
-                if i['Country'] == na:
-                 count = i
-        ind = states.index(count)
-        for i in states[ind]:
-                ret += markup(",[\'" + str(i['year']) + "\'," + str(i['Metrics']['Legitimacy']['Legitimacy Score]') + "," + str(i['Metrics']['Effectiveness']['Effectiveness Score']) + "," + str(i['Metrics'][State Fragility Index]) + "]")
-        return render_template('responsethree.html',nval = getStateOptions(states),graphVal = ret)
+        for j in states:
+            if j['Country'] == na:
+                i = states.index(j)
+                #ret += Markup(",[\'" + str(states[i]['year']) + "\'," + str(states[i]['Metrics']['Legitimacy']['Legitimacy Score'])  + ","  + str(states[i]['Metrics']['Effectiveness']['Effectiveness Score']) + "," + str(states[i]['Metrics']['State Fragility Index'])  + "]" )
+        return render_template('responsethree.html',graphVal = ret,nval = getStateOptions(states))
                                                                                                
 if __name__=="__main__":
     app.run(debug=False, port=54321)
