@@ -46,7 +46,7 @@ def render_response():
                 if i['Country'] == na and i['Year'] == int(ye):
                         count = i
         ind = states.index(count)
-        
+
         return render_template('response.html',nval = getStateOptions(states),yval = getYearOptions(states),name = na, year = ye, ls = str(states[ind]['Metrics']['Legitimacy']['Legitimacy Score']), pl = str(states[ind]['Metrics']['Legitimacy']['Political Legitimacy']), sel = str(states[ind]['Metrics']['Legitimacy']['Security Legitimacy']), el = str(states[ind]['Metrics']['Legitimacy']['Economic Legitimacy']), sl = str(states[ind]['Metrics']['Legitimacy']['Social Legitimacy']), es = str(states[ind]['Metrics']['Effectiveness']['Effectiveness Score']), pe = str(states[ind]['Metrics']['Effectiveness']['Political Effectiveness']), see = str(states[ind]['Metrics']['Effectiveness']['Security Effectiveness']), ee = str(states[ind]['Metrics']['Effectiveness']['Economic Effectiveness']), se = str(states[ind]['Metrics']['Effectiveness']['Social Effectiveness']), sfe = str(states[ind]['Metrics']['State Fragility Index']))
 @app.route("/responsetwo")
 def render_responsetwo():
@@ -57,7 +57,7 @@ def render_responsetwo():
                 if i['Country'] == na and i['Year'] == int(ye):
                         count = i
         ind = states.index(count)
-        
+
         nat = request.args['nameoft']
         yet = str(request.args['yeart'])
         countt = states[0]
@@ -70,11 +70,11 @@ def render_responsetwo():
 def render_responsethree():
         ret = ""
         na = request.args['nameof']
-        for j in states:
-            if j['Country'] == na:
-                i = states.index(j)
-                #ret += Markup(",[\'" + str(states[i]['year']) + "\'," + str(states[i]['Metrics']['Legitimacy']['Legitimacy Score'])  + ","  + str(states[i]['Metrics']['Effectiveness']['Effectiveness Score']) + "," + str(states[i]['Metrics']['State Fragility Index'])  + "]" )
-        return render_template('responsethree.html',graphVal = ret,nval = getStateOptions(states))
-                                                                                               
+        count = states[0]
+        for i in states:
+                if i['Country'] == na:
+                    ret += Markup(",[\'" + str(i['Year']) + "\'," + str(i['Metrics']['Legitimacy']['Legitimacy Score']) + "," + str(i['Metrics']['Effectiveness']['Effectiveness Score']) + "," + str(i['Metrics']['State Fragility Index']) + "]")
+        return render_template('responsethree.html',nval = getStateOptions(states),graphVal = ret, name = na)
+
 if __name__=="__main__":
     app.run(debug=False, port=54321)
